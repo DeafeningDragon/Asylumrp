@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"></link>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Brutal Mechanic Job</title>
+</head>
+
+<body style="background: none;">
+
+    <div class="job_menu" id="job_menu">
+        <div class="circle_container">
+        </div>
+        <div class="circles_label"></div>
+    </div>
+
+    <div class="interactions" id="interactions">
+        <div class="label mx-auto d-block mt-3">
+            <h2></h2>
+            <div class="background_effect"></div>
+        </div>
+        <div class="int_con mt-3">
+            <div class="row row-cols-1">
+                <div class="int_con_sec ">
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="shop" id="shop">
+        <div class="light"></div>
+        <div class="light2"></div>
+        <button class="details_btn px-3 m-3 float-end" id="shop_back" onclick="CloseShop(), CreateArmoryMenu()">back <i class="fa-solid fa-chevron-right"></i></button>
+        <h2 class="mt-3">SHOP</h2>
+        <div class="shop_elements_container row row-cols-3">
+        </div>
+        <div class="checkout_container">
+            <hr>
+            <h3>TOTAL: 0<money>$</money></h3>
+            <button class="buy_btn" onclick="BuyInShop()">BUY</button>
+        </div>
+        <div class="slider_btn" onclick="ChangeSliderbtn()">
+            <button class="slider" id="slider_shop"></button>
+            <div class="row button_container">
+                <div class="col"><i class="fa-solid fa-wallet"></i></div>
+                <div class="col"><i class="fa-solid fa-building-columns"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="diagnostic_tablet" id="diagnostic_tablet">
+        <div class="tablet_img"></div>
+        <div class="inner_container">
+
+            <div class="light"></div>
+            <div class="light2"></div>
+
+            <div class="top_bar"></div>
+
+            <img class="gears" src="assets/gears.webp">
+            <img class="turbo" src="assets/turbo.webp">
+
+            <div class="d-flex flex-column align-items-center">
+                <button class="homebar" id="homebar" onclick="BackToStart()"></button>
+            </div>
+
+            <div class="start_page" id="start_page">
+                <div class="title">DIAGNOSTICAL TABLET</div>
+                <div class="description">To collect datas about the vehicle you will have to run a diagnostic</div>
+                <div class="start_container" id="left">
+                    <div class="title2">PLATE</div>
+                    <div class="content"></div>
+                </div>
+                <div class="start_container" id="right">
+                    <div class="title2">CLASS</div>
+                    <div class="content"></div>
+                </div>
+                <button class="diagnostic_btn" id="start_diagnostic" onclick="RunDiagnostic()">RUN DIAGNOSTIC</button>
+            </div>
+
+            <div class="diagnostic_page" id="diagnostic_page">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="overall">
+                        <img class="side_lines" src="assets/lines_y.svg">
+                        <img class="side_lines2" src="assets/lines_y.svg">
+                        <div class="title">OVERALL STATUS</div>
+                        <div class="row overall_con">
+                            <div class="col d-flex flex-column align-items-center justify-content-center">
+                                <div class="status_text my-0" id="status_text"></div>
+                                <img class="status_line" src="assets/status.svg">
+                            </div>
+                            <div class="col d-flex flex-column align-items-center">
+                                <div class="healt_text mt-2">VEHICLE HEALT</div>
+                                <div class="healt_stat_con mt-2">
+                                    <div class="healt_stat_elm" id="hp0"></div>
+                                    <div class="healt_stat_elm" id="hp1"></div>
+                                    <div class="healt_stat_elm" id="hp2"></div>
+                                    <div class="healt_stat_elm" id="hp3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parts_container" id="parts_container">
+                    <div class="row ps-2" style="width: 100%; height: 100%;">
+                        
+                        <div class="col p-0 parts_element" id="part0">
+                            <img class="check_line" id="check_line0" src="assets/check_line.svg">
+                            <div class="title">ENGINE</div>
+                            <div class="status"></div>
+                            <img class="part_img" src="assets/engine.webp">
+                            <div class="description"></div>
+                            <button class="repair_btn" id="repair_1" onclick="StartRepair(id)">REPAIR</button>
+                        </div>
+
+                        <div class="col p-0 parts_element" id="part1">
+                            <img class="check_line" id="check_line1" src="assets/check_line.svg">
+                            <div class="title">CHASSIS</div>
+                            <div class="status"></div>
+                            <img class="part_img" src="assets/chassis.webp">
+                            <div class="description"></div>
+                            <button class="repair_btn" id="repair_2" onclick="StartRepair(id)">REPAIR</button>
+                        </div>
+
+                        <div class="col p-0 parts_element" id="part2">
+                            <img class="check_line" id="check_line2" src="assets/check_line.svg">
+                            <div class="title">TYRES</div>
+                            <div class="status"></div>
+                            <img class="part_img" src="assets/tyre.webp">
+                            <div class="description"></div>
+                            <button class="repair_btn" id="repair_3" onclick="StartRepair(id)">REPAIR</button>
+                        </div>
+
+                        <div class="col p-0 parts_element" id="part3">
+                            <img class="check_line" id="check_line3" src="assets/check_line.svg">
+                            <div class="title">SUSPENSION</div>
+                            <div class="status"></div>
+                            <img class="part_img" src="assets/suspension.webp">
+                            <div class="description"></div>
+                            <button class="repair_btn" id="repair_4" onclick="StartRepair(id)">REPAIR</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="vehicle_lift" id="vehicle_lift">
+        <div class="light"></div>
+        <div class="light2"></div>
+        <div class="title">VEHICLE LIFT</div>
+        <div class="description">To move the lifter use the buttons</div>
+        <div class="row row-cols-1 mx-3" style="margin-top: 75px;">
+            <div class="col mt-3 px-0 d-flex flex-column align-items-center">
+                <button class="lift_btn" id="up" onclick="MoveLift(id)"><i class="fa-solid fa-arrow-up"></i></button>
+            </div>
+            <div class="col mt-3 px-0 d-flex flex-column align-items-center">
+                <button class="lift_btn" id="stop" onclick="MoveLift(id)"><i class="fa-solid fa-ban"></i></button>
+            </div>
+            <div class="col mt-3 px-0 d-flex flex-column align-items-center">
+                <button class="lift_btn" id="down" onclick="MoveLift(id)"><i class="fa-solid fa-arrow-down"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bill_creator" id="bill_creator">
+        <div class="light"></div>
+        <div class="light2"></div>
+        <div class="title mt-1">CREATE BILL</div>
+        <div class="d-flex flex-column align-items-center" style="z-index: 2; position: relative;">
+            <div class="label mt-1">Select the player</div>
+            <div class="players_con d-flex flex-column align-items-center justify-content-center">
+                <div class="row " style="width: 97%;">
+                    
+                </div>
+            </div>
+            <div class="label mt-1">Name</div>
+            <div class="input-group input-group-lg" style="width: 85%;">
+                <input class="form-control typeahead rounded bill_input" id="in_name" onchange="SyncAmount(id)" oninput="SyncAmount(id)" style="height: 47px;">
+            </div>
+            <div class="label mt-1">Amount</div>
+            <div class="input-group input-group-lg" style="width: 85%;">
+                <input class="form-control bill_input rounded" id="in_amount" onkeypress="return isNumber(event)"  oninput="RefreshSendBill()" onchange="RefreshSendBill()" style="height: 47px;">
+            </div>
+            <div class="row mb-3 mt-4">
+                <div class="col">
+                    <button class="basic_btn" onclick="Close()">CANCEL</button>
+                </div>
+                <div class="col">
+                    <button class="basic_btn green" id="bill_btn" disabled onclick="SendBill()">CONFIRM</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tasks" id="tasks">
+        <div class="light"></div>
+        <div class="title mt-1">TASKS</div>
+        <div class="container">
+        </div>
+    </div>
+
+    <div class="calls" id="calls">
+        <div class="light"></div>
+        <div class="light2"></div>
+        <div class="title mt-1">CALLS</div>
+        <div class="container">
+
+        </div>
+        <img class="map_img" src="assets/map.webp">
+    </div>
+
+    <div class="create_call" id="create_call">
+        <img class="map_img" src="assets/map.webp">
+        <div class="light"></div>
+        <div class="light2"></div>
+        <div class="title mt-1">MECHANIC</div>
+        <div class="input-group mt-2 px-3 h-50">
+            <textarea class="form-control" id="in_call_reason" placeholder="Type your problem..." oninput="RefreshCreateCallBTN(id)"></textarea>
+        </div>
+        <button class="basic_btn green mt-3" id="create_call" onclick="CreateCall()">SEND</button>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
+</script>
+<script src="script.js"></script>
+</html>
