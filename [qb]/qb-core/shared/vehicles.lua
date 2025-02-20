@@ -1992,7 +1992,15 @@ local Vehicles = {
 		['hash'] = `zr380s`,
 		['shop'] = 'luxury',
     }
-	
+['zr380s2'] = {
+		['name'] = 'ZR-380 Custom',
+		['brand'] = 'Annis',
+		['model'] = 'zr380s',
+		['price'] = 120000,
+		['category'] = 'tuner',
+		['hash'] = `zr380s`,
+		['shop'] = 'luxury',
+    }	
 
 }
 
