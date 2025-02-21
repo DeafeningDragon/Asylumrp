@@ -388,6 +388,8 @@ const InventoryContainer = Vue.createApp({
                     slot: 1,
                     inventory: "other",
                 };
+                case "spraycan":
+                    return `<p><strong>Spray: </strong><span>${itemData.info.name}</span></p>`;
                 const draggingItem = this.currentlyDraggingItem;
                 try {
                     const response = await axios.post("https://qb-inventory/DropItem", {

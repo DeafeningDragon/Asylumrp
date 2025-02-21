@@ -730,4 +730,9 @@ cryptostick = {
 ['vehicle_window'] 				= {['name'] = 'vehicle_window', 				['label'] = 'Vehicle Window', 				['weight'] = 10, 		['type'] = 'item', 		['image'] = 'vehicle_window.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Not have'},
 ['vehicle_tyre'] 			 	= {['name'] = 'vehicle_tyre', 					['label'] = 'Vehicle Tyre', 				['weight'] = 10, 		['type'] = 'item', 		['image'] = 'vehicle_tyre.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Not have'},
 ['suspension'] 			                = {['name'] = 'suspension', 				        ['label'] = 'Suspension', 		                ['weight'] = 10, 		['type'] = 'item', 		['image'] = 'suspension.png',   	        ['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Not have'},
+ -- Graffitis
+ ["spraycan"]                        = {["name"] = "spraycan",                          ["label"] = "Spray Can",                ["weight"] = 1000,          ["type"] = "item",         ["image"] = "spraycan.png",                ["unique"] = true,          ["useable"] = true,     ["shouldClose"] = true,       ["combinable"] = nil,   ["description"] = "Spray Can"},
+ ["sprayremover"]                    = {["name"] = "sprayremover",                      ["label"] = "Spray Remover",            ["weight"] = 100,           ["type"] = "item",         ["image"] = "sprayremover.png",                ["unique"] = true,          ["useable"] = true,     ["shouldClose"] = true,       ["combinable"] = nil,   ["description"] = "Spray Remover"},
+
+
 }
