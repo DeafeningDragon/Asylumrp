@@ -1,0 +1,1 @@
+To Install just copy into your FiveM applications directory
